@@ -10,18 +10,23 @@ def servo(degrees):
     if degrees < 40:
         degrees=40
     
-    maxDuty=9000
-    minDuty=1000
+    maxDuty=8000
+    minDuty=1500
     
     newDuty=minDuty+(maxDuty-minDuty)*(degrees/180)
     servoPin.duty_u16(int(newDuty))
     
 while True:
-    servo(100)
-    print("increasing -- 100")
+    servo(180)
+    print("increasing -- 180")
     sleep(2)
-    servo(40)
-    print("increasing -- 40")
+    
+    servo(90)
+    print("increasing -- 90")
+    sleep(2)
+    
+    servo(0)
+    print("increasing -- 0")
     sleep(2)
 
 
